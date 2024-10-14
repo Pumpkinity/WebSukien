@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebE.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Arthur Fleck</title>
+    <link href="StyleSheet.css" rel="StyleSheet" type="text/css" />
+    <link href="/fontawesome-free-6.1.1-web/css/all.min.css" rel="StyleSheet" />
+    <link href='https://fonts.googleapis.com/css?family=Libre Barcode 39' rel='stylesheet'/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <link href="StyleSheet3.css" rel="StyleSheet" type="text/css" />
+    <link href="StyleSheet4.css" rel="StyleSheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="Banner">
+            <div class="Social-Brand">
+             <div class="Icon">
+                    <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+             </div>
+              
+             <div class="Brand"><p> ArthurFleck </p></div>
+             <h4>- Call me by your phone - </h4>
+             <nav id="navbar" role="navigation">
+             <div class="Navigation">
+               <ul>
+                    <li><a href="Homepage.aspx">Home</a></li>
+                    <li><a href='<%="Detailpage.aspx?IdCate="+listCa[0].IdCate %>'>Event</a>
+                          <ul>
+                                <% for(int i=0;i<listCa.Count;i++)
+               {
+                    %>
+            <li><a href='<%="Detailpage.aspx?IdCate="+listCa[i].IdCate %>'><%=listCa[i].Header %></a></li>
+         <%} %>
+                          </ul>
+                    </li>
+                    <li><a href="Ticketpage.aspx">Tickets</a></li>
+                    <li><a href="contactpage.aspx">Contact</a></li>
+                    <li><a href="Aboutpage.aspx">About</a></li>
+                </ul>
+            </div>
+            </nav>
+             <pre>Event, Inc.</pre>
+            </div>
+            
+           <div class="Intro">
+            <div style="position: absolute;top: -40px;left: 20px;height: 27px;;display: inline-block;font-size: 20px;font-family: Edo ;;width: 50px;;background-color: black; color: #ffb3b3;">
+                NO.20
+            </div>
+            <div class="Text"><h1>EVENT PROFESSIONALS</h1>
+            <h4 style="color:#ffb3b3;;font-family: Candara;font-size: 25px;border-bottom: white solid 1px;;">
+                <i class="fa-solid fa-location-dot"></i> 209 St.30/4, Xuan Khanh, Ninh Kieu, Can Tho, Viet Nam.</h4>
+            <p>Your joy is our inspiration</p><br>
+            <p> The most anticipated event of the year will take place with our professionals</p><br>
+            <button><a href="Ticketpage.aspx">Book Now</a></button>
+        </div>
+            </div>
+        <div class="shape">
+            <div class="Test">
+            </div>
+            <pre style="position:relative;top:32px;right:150px;color:white;
+    font-size:22px;">June</pre>
+            <div class="Test2">
+                <div class="Test3"></div>
+                <div class="Test4"></div>
+          </div>
+          <pre style="position:relative;left:240px;bottom:70px;color:rgb(19, 18, 18);
+          font-size:26px;">30<span style="position: relative;font-size: 14px;font-weight: bold;bottom: 9px;">TH</span>/2023</pre>
+    </div>
+                    <img src="Other/BannerEvent4.jpg"/>
+    </div>
+        <div class="Login"><div class="Sign"><a href="User/Login.aspx">Account</a></div>
+      </div>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+                <footer>
+                <div class="footer">
+                    <div class="footer-tab">
+                        <div>
+                            <h1>Arthur Fleck</h1>
+                            <h4 style="text-align: start;">Call us:</h4>
+                            <p>0325 464 642</p>
+                        </div>
+                        <div>
+                            <h1>Site Map</h1>
+                            <ul>
+                                <li><a href="Homepage.aspx">Home</a></li>
+                                <li><a href="Ticketpage.aspx">Ticket</a></li>
+                                <li><a href="contactpage.aspx">Contact</a></li>
+                                <li><a href="Aboutpage.aspx">About</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1>Service</h1>
+                            <ul>
+                                <% for(int i=0;i<listCa.Count;i++)
+               {
+                    %>
+            <li><a href='<%="Detailpage.aspx?IdCate="+listCa[i].IdCate %>'><%=listCa[i].Header %></a></li>
+         <%} %>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1>Keep in touch</h1>
+                            <h4 style="text-align: start;">Gmail:</h4>
+                            <p>khoaa1003@gmail.com</p>
+                            <p>quanap12012@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align-last: center;background: black;color: aliceblue;">Copyright 2023</p>
+            </footer>
+        <script src="Java.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
+</body>
+</html>

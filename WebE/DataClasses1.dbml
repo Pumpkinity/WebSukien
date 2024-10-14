@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WebEvent" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOPME\SQLEXPRESS;Initial Catalog=WebEvent;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WebEventConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cate" Member="Cates">
+    <Type Name="Cate">
+      <Column Name="IdCate" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Viewdetail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Cate_Dt" Member="Dts" ThisKey="IdCate" OtherKey="idcat" Type="Dt" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Dt" Member="Dts">
+    <Type Name="Dt">
+      <Column Name="IdEvent" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tt" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Dt" Member="Dt1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tt2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Dt2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tt3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Dt3" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Banner" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="idcat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Dt_Cart" Member="Carts" ThisKey="IdEvent" OtherKey="idEvent" Type="Cart" />
+      <Association Name="Cate_Dt" Member="Cate" ThisKey="idcat" OtherKey="IdCate" Type="Cate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tickets" Member="Tickets">
+    <Type Name="Ticket">
+      <Column Name="IdTicket" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Header" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Img" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Ticket_Cart" Member="Carts" ThisKey="IdTicket" OtherKey="idTickets" Type="Cart" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="IdAdmin" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="admin" Member="admin1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cart" Member="Carts">
+    <Type Name="Cart">
+      <Column Name="idCart" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idEvent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cart_Login" Member="Logins" ThisKey="idCart" OtherKey="IdCart" Type="Login" />
+      <Association Name="Dt_Cart" Member="Dt" ThisKey="idEvent" OtherKey="IdEvent" Type="Dt" IsForeignKey="true" />
+      <Association Name="Ticket_Cart" Member="Ticket" ThisKey="idTickets" OtherKey="IdTicket" Type="Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Login" Member="Logins">
+    <Type Name="Login">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdCart" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Cart_Login" Member="Cart" ThisKey="IdCart" OtherKey="idCart" Type="Cart" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

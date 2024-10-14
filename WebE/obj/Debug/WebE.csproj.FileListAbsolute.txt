@@ -1,0 +1,6 @@
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\bin\WebE.dll.config
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\bin\WebE.dll
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\bin\WebE.pdb
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\obj\Debug\WebE.csprojResolveAssemblyReference.cache
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\obj\Debug\WebE.dll
+c:\users\hp\onedrive\tài liệu\visual studio 2013\Projects\WebE\WebE\obj\Debug\WebE.pdb
